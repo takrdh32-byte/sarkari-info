@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarkari Yojana Directory - ToolZen Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #15121f;
+    --card: #1f1a2e;
+    --card-hover: #261f38;
+    --accent: #ff9933;
+    --accent2: #138808;
+    --navy: #0b3d6e;
+    --text: #f5f3f8;
+    --muted: #a89db8;
+    --border: #332b47;
+    --cream: #fdf8ef;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter','Noto Sans Devanagari',sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+
+  /* ============ OFFICIAL HEADER BAND ============ */
+  .gov-band{
+    background: var(--cream);
+    color: #1a2740;
+    padding: 10px 16px;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+  }
+  .gov-band .badge-icon{
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    position:relative;
+  }
+  .gov-band .badge-icon svg{ width:20px; height:20px; }
+  .gov-band-text{ flex:1; min-width:0; }
+  .gov-band-title{
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1a2740;
+    line-height:1.3;
+  }
+  .gov-band-sub{
+    font-size: 10.5px;
+    color: #5a6b85;
+    font-weight:500;
+    margin-top:1px;
+  }
+  .gov-band-lang{
+    font-size:11px;
+    font-weight:600;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+    border-radius: 6px;
+    padding: 4px 10px;
+    flex-shrink:0;
+  }
+
+  /* Tricolor strip */
+  .tricolor-strip{
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0 33.33%, #ffffff 33.33% 66.66%, var(--accent2) 66.66% 100%);
+  }
+
+  /* ============ HERO HEADER ============ */
+  header{
+    padding: 26px 18px 18px;
+    text-align:center;
+    position: relative;
+  }
+  header .eyebrow{
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  header h1{
+    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    line-height:1.25;
+  }
+  header p{
+    color: var(--muted);
+    font-size: 13.5px;
+    max-width: 440px;
+    margin: 0 auto;
+    line-height:1.6;
+  }
+
+  /* ticker / last updated bar */
+  .update-ticker{
+    max-width: 640px;
+    margin: 16px auto 0;
+    padding: 0 18px;
+  }
+  .update-ticker-inner{
+    background: rgba(19,136,8,0.08);
+    border: 1px solid rgba(19,136,8,0.22);
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-size: 12px;
+    color: #8fd98a;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    font-weight: 600;
+  }
+  .update-ticker-inner .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: #4ade80;
+    flex-shrink:0;
+    box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+    70%{ box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+
+  /* ---------- Disclaimer ---------- */
+  .disclaimer{
+    margin: 12px auto 0;
+    max-width: 640px;
+    background: rgba(255,153,51,0.07);
+    border: 1px solid rgba(255,153,51,0.22);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .disclaimer .icon{ font-size:16px; flex-shrink:0; line-height:1.4; }
+  .disclaimer b{ color: var(--text); }
+
+  /* ---------- Search + Filters ---------- */
+  .controls{
+    max-width: 640px;
+    margin: 18px auto 0;
+    padding: 0 18px;
+  }
+  .search-box{
+    width:100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 13px 16px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+    outline:none;
+    transition: border-color .15s ease;
+  }
+  .search-box::placeholder{ color: var(--muted); }
+  .search-box:focus{ border-color: var(--accent); }
+
+  .chips{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    margin-top: 12px;
+    padding-bottom: 4px;
+    scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{ display:none; }
+  .chip{
+    flex-shrink:0;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight:500;
+    cursor:pointer;
+    transition: all .15s ease;
+    user-select:none;
+    white-space:nowrap;
+  }
+  .chip.active{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1a1208;
+    font-weight:600;
+  }
+
+  /* result count */
+  .result-count{
+    max-width:640px;
+    margin: 12px auto 0;
+    padding: 0 18px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight:500;
+  }
+  .result-count b{ color: var(--accent); }
+
+  /* ---------- Cards ---------- */
+  .list{
+    max-width: 640px;
+    margin: 8px auto 0;
+    padding: 0 18px;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+
+  .scheme-card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow:hidden;
+    transition: background .15s ease, transform .1s ease, border-color .15s ease;
+    position:relative;
+  }
+  .scheme-card:active{ transform: scale(0.997); }
+  .scheme-card.open{ border-color: rgba(255,153,51,0.35); }
+
+  .scheme-header{
+    padding: 16px 16px;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .scheme-emoji{
+    font-size: 26px;
+    width: 44px; height:44px;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+  }
+  .scheme-title-wrap{ flex:1; min-width:0; }
+  .scheme-title{
+    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+    font-weight:700;
+    font-size: 15px;
+    margin-bottom: 4px;
+    line-height:1.3;
+  }
+  .tag-row{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+  .scheme-tag{
+    display:inline-block;
+    font-size: 11px;
+    font-weight:600;
+    color: var(--accent2);
+    background: rgba(19,136,8,0.12);
+    border-radius: 999px;
+    padding: 2px 9px;
+    letter-spacing: 0.02em;
+  }
+  .verified-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    font-size: 10.5px;
+    font-weight:600;
+    color: var(--navy-light, #7fb3e8);
+    background: rgba(127,179,232,0.12);
+    border-radius: 999px;
+    padding: 2px 9px;
+    letter-spacing: 0.01em;
+  }
+  .chevron{
+    font-size: 18px;
+    color: var(--muted);
+    transition: transform .25s ease;
+    flex-shrink:0;
+  }
+  .scheme-card.open .chevron{ transform: rotate(180deg); }
+
+  .scheme-body{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .35s ease;
+  }
+  .scheme-card.open .scheme-body{ max-height: 900px; }
+
+  .scheme-body-inner{
+    padding: 0 16px 18px;
+    border-top: 1px solid var(--border);
+    margin-top: 2px;
+    padding-top: 14px;
+  }
+
+  .info-row{
+    display:flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items:flex-start;
+  }
+  .info-label{
+    font-size: 11.5px;
+    font-weight:700;
+    color: var(--accent);
+    text-transform:uppercase;
+    letter-spacing: 0.04em;
+    width: 78px;
+    flex-shrink:0;
+    padding-top: 1px;
+  }
+  .info-value{
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.6;
+    flex:1;
+  }
+  .info-value ul{ margin: 0; padding-left: 18px; }
+  .info-value li{ margin-bottom: 3px; }
+
+  .official-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 8px;
+    width:100%;
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #1a1208;
+    font-weight:700;
+    font-size: 14px;
+    font-family: inherit;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    transition: filter .15s ease;
+  }
+  .official-btn:active{ filter: brightness(0.9); }
+  .official-btn .arrow{ font-size:16px; }
+
+  .helpline-row{
+    margin-top: 8px;
+    text-align:center;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+  .helpline-row b{ color: var(--text); }
+
+  /* ---------- Banner ad slot ---------- */
+  .ad-slot{
+    max-width: 640px;
+    margin: 18px auto 0;
+    padding: 0 18px;
+  }
+  .ad-slot-inner{
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    text-align:center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- No results ---------- */
+  .no-results{
+    text-align:center;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 40px 20px;
+    display:none;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width:640px;
+    margin: 28px auto 0;
+    padding: 0 18px;
+    text-align:center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height:1.8;
+  }
+  footer a{ color: var(--accent); text-decoration:none; }
+  footer .gov-seal-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 8px;
+    margin-top: 14px;
+    opacity: 0.6;
+  }
+  footer .gov-seal-row .line{
+    height:1px; flex:1; max-width:80px;
+    background: var(--border);
+  }
+
+  /* ---- Language Toggle ---- */
+  .lang-toggle{
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  }
+  .lang-btn{
+    padding: 7px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    transition: all .18s ease;
+    letter-spacing: 0.03em;
+  }
+  .lang-btn.active{
+    background: var(--accent);
+    color: #1a1208;
+    border-radius: 999px;
+  }
+  /* Hide/show based on lang */
+  body.lang-en .hi { display: none !important; }
+  body.lang-hi .en { display: none !important; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation:none !important; }
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- ============ Language Toggle ============ -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" id="btnHi" onclick="setLang('hi')">हिं</button>
+</div>
+
+<!-- ============ Official-style header band ============ -->
+<div class="gov-band">
+  <div class="badge-icon">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="#fdf8ef" stroke-width="1.5"/>
+      <path d="M12 6V18M6 12H18" stroke="#fdf8ef" stroke-width="1.5"/>
+      <circle cx="12" cy="12" r="3" fill="#fdf8ef"/>
+    </svg>
+  </div>
+  <div class="gov-band-text">
+    <div class="gov-band-title"><span class="en">Sarkari Yojana Directory</span><span class="hi">सरकारी योजना डायरेक्टरी</span></div>
+    <div class="gov-band-sub"><span class="en">Public Welfare Schemes — Information Service</span><span class="hi">जन कल्याण योजनाएं — सूचना सेवा</span></div>
+  </div>
+  <div class="gov-band-lang" id="govLangLabel">EN / हिं</div>
+</div>
+<div class="tricolor-strip"></div>
+
+<!-- ============ Hero ============ -->
+<header>
+  <div class="eyebrow"><span class="en">Government Schemes of India</span><span class="hi">भारत सरकार की योजनाएं</span></div>
+  <h1><span class="en">Sarkari Yojana Info</span><span class="hi">सरकारी योजना जानकारी</span></h1>
+  <p><span class="en">Accurate information about government schemes, all in one place. Apply only through the official website below.</span><span class="hi">Government schemes ki sahi jaankari, ek jagah. Apply seedha official website se karein.</span></p>
+</header>
+
+<div class="update-ticker">
+  <div class="update-ticker-inner">
+    <span class="dot"></span> <span class="en">Last content review: June 2026 — 60 schemes listed</span><span class="hi">अंतिम समीक्षा: जून 2026 — 60 योजनाएं सूचीबद्ध</span>
+  </div>
+</div>
+
+<div class="disclaimer">
+  <span class="icon">ℹ️</span>
+  <div>
+    <b><span class="en">Important:</span><span class="hi">महत्वपूर्ण:</span></b> <span class="en">This is an informational page only. We do not accept any application, nor charge any fee. To apply, use only the <b>official government website</b> links below. Do not share Aadhaar/PAN/bank details with any agent or app promising "guaranteed approval".</span><span class="hi">Ye sirf informational page hai. Hum koi application accept nahi karte, na hi paisa lete hain. Apply karne ke liye sirf neeche diye gaye <b>official sarkari website</b> ka use karein. Kisi bhi agent ya app ko Aadhaar/PAN/bank details na dein jo "guaranteed approval" ka vaada kare.</span>
+  </div>
+</div>
+
+<div class="controls">
+  <input type="text" class="search-box" id="searchBox" 
+    placeholder="Search scheme name... (e.g. Kisan, Awas, Pension)"
+    data-placeholder-en="Search scheme name... (e.g. Kisan, Awas, Pension)"
+    data-placeholder-hi="योजना का नाम खोजें... (जैसे किसान, आवास, पेंशन)">
+  <div class="chips" id="chips">
+    <div class="chip active" data-filter="all"><span class="en">All</span><span class="hi">सभी</span></div>
+    <div class="chip" data-filter="farmer"><span class="en">Farmer</span><span class="hi">किसान</span></div>
+    <div class="chip" data-filter="health"><span class="en">Health</span><span class="hi">स्वास्थ्य</span></div>
+    <div class="chip" data-filter="women"><span class="en">Women</span><span class="hi">महिला</span></div>
+    <div class="chip" data-filter="housing"><span class="en">Housing</span><span class="hi">आवास</span></div>
+    <div class="chip" data-filter="savings"><span class="en">Savings</span><span class="hi">बचत</span></div>
+    <div class="chip" data-filter="employment"><span class="en">Employment</span><span class="hi">रोजगार</span></div>
+    <div class="chip" data-filter="pension"><span class="en">Pension</span><span class="hi">पेंशन</span></div>
+    <div class="chip" data-filter="education"><span class="en">Education</span><span class="hi">शिक्षा</span></div>
+  </div>
+</div>
+
+<div class="result-count" id="resultCount"></div>
+
+<div class="list" id="list">
+
+  <!-- 1. PM-KISAN -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌾</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM-KISAN Samman Nidhi</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer</span><span class="hi">किसान</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Patra kisaan parivaaron ko ₹6,000 saalana, ₹2,000 ki teen kishton mein, seedha bank account mein (DBT).</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Cultivable zameen rakhne wale kisaan parivaar</li>
+              <li>Valid Aadhaar aur bank account zaroori</li>
+              <li>Sarkari employees, pensioners (₹10,000+ pension), income tax payers, aur professionals (doctor/engineer/CA etc.) eligible nahi hain</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card, bank passbook, zameen ke kagzaat</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official portal par "Farmers Corner" se self-registration, ya nearby CSC (Common Service Centre) se.</div>
+        </div>
+        <a class="official-btn" href="https://pmkisan.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>155261 / 1800-115-526</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Ayushman Bharat / PM-JAY -->
+  <div class="scheme-card" data-cat="health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏥</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Ayushman Bharat (PM-JAY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Health</span><span class="hi">स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Har patra parivaar ko ₹5 lakh tak ka cashless aur paperless health insurance, government aur private empanelled hospitals mein. Pre-existing diseases bhi day-1 se covered.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>SECC 2011 deprivation criteria ke अनुसार economically weaker families (rural & urban)</li>
+              <li>70 saal ya usse upar ke sabhi senior citizens — income criteria ke bina, alag Ayushman card ke saath</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card, mobile number, ration card/family ID (agar ho)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official portal par "Am I Eligible" check karein, fir Ayushman App ya CSC se card banayein.</div>
+        </div>
+        <a class="official-btn" href="https://pmjay.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>14555 / 1800-111-565</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Sukanya Samriddhi Yojana -->
+  <div class="scheme-card" data-cat="savings women">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👧</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Sukanya Samriddhi Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Savings · Women</span><span class="hi">बचत · महिला</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Beti ke naam high-interest savings account (govt-backed), jo unki padhai aur shaadi ke liye fund banata hai. Tax benefits bhi milte hain.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Beti ki age 10 saal ya usse kam ho</li>
+              <li>Parents/guardian khaata khol sakte hain</li>
+              <li>Birth certificate proof zaroori</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Kisi bhi India Post office ya authorized commercial bank branch mein account khulwayein.</div>
+        </div>
+        <a class="official-btn" href="https://www.indiapost.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to India Post Website</span><span class="hi">India Post Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>1800-266-6868</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PM Awas Yojana -->
+  <div class="scheme-card" data-cat="housing">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏠</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Awas Yojana (Gramin/Urban)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing</span><span class="hi">आवास</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Pakka ghar banane ke liye financial assistance — gramin areas mein seedhi sahayata, urban areas mein interest subsidy home loans par.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Bina pakke ghar wale parivaar</li>
+              <li>EWS/LIG/MIG income categories (urban scheme ke liye)</li>
+              <li>SECC data ke aadhar par gramin list mein naam hona zaroori</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Gram Panchayat/Block office (rural) ya official portal/CSC (urban) se status check aur apply karein.</div>
+        </div>
+        <a class="official-btn" href="https://pmaymis.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>1800-11-6446 (Urban) / 1800-11-8111 (Gramin)</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PM Ujjwala Yojana -->
+  <div class="scheme-card" data-cat="women">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🔥</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Ujjwala Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women</span><span class="hi">महिला</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">BPL parivaar ki mahilaon ko free LPG gas connection (security deposit waiver) — saath mein subsidy bhi.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>BPL (Below Poverty Line) ration card holder mahila</li>
+              <li>18 saal ya usse upar ki age</li>
+              <li>Ghar mein pehle se LPG connection na ho</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card, BPL ration card, bank account details, passport size photo</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Nazdeeki LPG distributor (Indane/HP/Bharat Gas) ke paas form submit karein, ya online portal se apply karein.</div>
+        </div>
+        <a class="official-btn" href="https://pmuy.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>1800-266-6696</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. PM Mudra Yojana -->
+  <div class="scheme-card" data-cat="employment">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💼</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Mudra Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment</span><span class="hi">रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Chote business/shop/startup ke liye collateral-free loan — ₹50,000 se ₹10 lakh tak (Shishu, Kishor, Tarun categories).</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Non-farm income generating chhota/micro business chalane wale individuals</li>
+              <li>Naya ya existing business dono eligible</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar, PAN, business proof, bank statement, project report (chhota business plan)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Kisi bhi participating bank/NBFC/MFI branch mein ya Udyamimitra portal se apply karein.</div>
+        </div>
+        <a class="official-btn" href="https://www.mudra.org.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Apna nazdeeki bank branch se sampark karein</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. National Scholarship Portal -->
+  <div class="scheme-card" data-cat="education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🎓</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">National Scholarship Portal</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education</span><span class="hi">शिक्षा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">100+ central aur state govt scholarships ek jagah — Pre-Matric, Post-Matric, college/university scholarships, minority scholarships, etc.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Har scholarship ki apni criteria hoti hai (income, category, marks)</li>
+              <li>Generally school/college mein enrolled students</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar, bank account, income certificate, marksheet, college/school ID</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">NSP portal par registration karein, apni eligibility ke according scholarship select karein aur apply karein.</div>
+        </div>
+        <a class="official-btn" href="https://scholarships.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>0120-6619540</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. PM Jan Dhan Yojana -->
+  <div class="scheme-card" data-cat="savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏦</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Jan Dhan Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag">बचत</span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Zero-balance bank account, free RuPay debit card, ₹2 lakh tak accident insurance cover aur overdraft facility.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Koi bhi Indian citizen jiska bank account nahi hai</li>
+              <li>10 saal se upar ke bachhe bhi khol sakte hain</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card (ya koi valid ID/address proof)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Nazdeeki bank branch ya Business Correspondent (BC) ke paas form fill karke account khulwayein.</div>
+        </div>
+        <a class="official-btn" href="https://pmjdy.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>1800-180-1111 / 1800-110-001</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. PM Shram Yogi Maandhan -->
+  <div class="scheme-card" data-cat="employment pension">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👷</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Shram Yogi Maandhan</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Pension · Employment</span><span class="hi">पेंशन · रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Unorganised sector workers ke liye pension scheme — 60 saal ki age ke baad ₹3,000/month pension, sirf ₹55-200/month contribution par (age ke hisaab se). Govt bhi matching contribution deti hai.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Unorganised sector workers (street vendors, domestic workers, construction workers, etc.)</li>
+              <li>Age 18-40 saal</li>
+              <li>Monthly income ₹15,000 se kam</li>
+              <li>EPFO/ESIC/NPS member na ho, aur income tax payer na ho</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card, savings bank account / Jan Dhan account, mobile number</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Nazdeeki CSC (Common Service Centre) ke paas jaayein ya online self-registration karein.</div>
+        </div>
+        <a class="official-btn" href="https://maandhan.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>1800-267-6888</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. PM Fasal Bima Yojana -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌧️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Fasal Bima Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer</span><span class="hi">किसान</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Natural calamities (baarish, sukha, bemausam mausam, keet/rog) se fasal kharab hone par 100% tak crop loss coverage — seedha bank account mein DBT, kuch lautana nahi padta.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Notified crops, notified areas mein registered kisaan</li>
+              <li>Loanee kisaan automatically covered hote hain</li>
+              <li>Non-loanee kisaan voluntarily apply kar sakte hain</li>
+              <li>KYC-compliant Aadhaar zaroori</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Premium</span><span class="hi">प्रीमियम</span></div>
+          <div class="info-value">Kharif: 2% · Rabi: 1.5% · Horticulture/Commercial crops: 5% (baki premium govt subsidy se covered)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official portal se online apply karein, ya CSC/bank branch se. Fasal nuksaan hone par 72 ghante ke andar app/portal par report karna zaroori hai.</div>
+        </div>
+        <a class="official-btn" href="https://pmfby.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Kisan Call Centre: <b>1800-180-1551</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Atal Pension Yojana -->
+  <div class="scheme-card" data-cat="pension savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👴</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Atal Pension Yojana (APY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Pension</span><span class="hi">पेंशन</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">60 saal ki age ke baad guaranteed monthly pension — ₹1,000 se ₹5,000 tak (apni choice ke hisaab se), saath mein Section 80C tax benefit.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Age 18-40 saal ke beech koi bhi Indian citizen jiska savings bank account ho</li>
+              <li>Income tax payers eligible nahi hain</li>
+              <li>Jitni jaldi join karoge, monthly contribution kam hoga</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar card, savings bank account, mobile number, nominee details</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Apni bank branch/post office jahan account hai, wahan APY form fill karein aur auto-debit authorize karein. Online: eNPS portal se bhi kar sakte hain.</div>
+        </div>
+        <a class="official-btn" href="https://npscra.nsdl.co.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Apni bank/post office branch se sampark karein</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. e-Shram Card -->
+  <div class="scheme-card" data-cat="employment pension">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🪪</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">e-Shram Card</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment</span><span class="hi">रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Unorganised sector workers ke liye universal ID card — ₹2 lakh accident insurance, PM-SVANidhi jaise loan schemes tak access, National Career Service se job-matching, aur free skill training (Skill India Digital).</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Age 16-59 saal ke unorganised sector workers (labour, street vendors, domestic workers, gig workers, etc.)</li>
+              <li>EPFO/ESIC/NPS member na ho aur income tax payer na ho</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Aadhaar (mobile-linked), bank account details</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official e-Shram portal par self-registration (5 minute), ya CSC se. Sirf 5 minute mein card ban jaata hai.</div>
+        </div>
+        <a class="official-btn" href="https://eshram.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>14434</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. PM SVANidhi -->
+  <div class="scheme-card" data-cat="employment">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🛒</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM SVANidhi (Street Vendors)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment</span><span class="hi">रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Street vendors ke liye collateral-free working capital loan — pehle ₹10,000, time par repay karne par ₹20,000, fir ₹50,000 tak. Saath mein 7% interest subsidy aur digital payment par cashback.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>Urban local body (ULB) se Certificate of Vending/ID card waale street vendors</li>
+              <li>Survey mein identified vendors bhi eligible</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value">Vending certificate/ID card, Aadhaar, bank account</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official portal se ya nazdeeki bank/CSC se apply karein.</div>
+        </div>
+        <a class="official-btn" href="https://pmsvanidhi.mohua.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Apni bank branch ya ULB office se sampark karein</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14. PM Vishwakarma Yojana -->
+  <div class="scheme-card" data-cat="employment">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🛠️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Vishwakarma Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment</span><span class="hi">रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value">Traditional craftsmen/artisans (18 trades — tailor, carpenter, blacksmith, cobbler, etc.) ko free skill training, toolkit ke liye ₹15,000 tak, aur low-interest collateral-free loan.</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li>18 listed traditional trades mein kaam karne wale artisans/craftspeople</li>
+              <li>Family-based traditional work hona chahiye</li>
+              <li>Pichhle 5 saal mein PMEGP/PM SVANidhi/Mudra loan na liya ho</li>
+              <li>Government employees aur unke family members eligible nahi hain</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value">Official portal par registration karein ya CSC se apply karein. Application free hai.</div>
+        </div>
+        <a class="official-btn" href="https://pmvishwakarma.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row">Helpline: <b>18002677777</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. PM Kisan Maandhan Yojana -->
+  <div class="scheme-card" data-cat="farmer pension">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Kisan Maandhan Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer · Pension</span><span class="hi">किसान · पेंशन</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Small and marginal farmers get ₹3,000/month pension after age 60. Government contributes matching amount. Spouse also gets ₹1,500/month in case of farmer's death.</span><span class="hi">Chote aur seemant kisaanon ko 60 saal ki age ke baad ₹3,000/month pension. Sarkaar bhi barabar contribution deti hai. Kisan ki maut par patni ko ₹1,500/month milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Small/marginal farmers (upto 2 hectares cultivable land)</span><span class="hi">Chote/seemant kisaan (2 hectare tak zameen)</span></li>
+              <li><span class="en">Age 18–40 years</span><span class="hi">Age 18–40 saal</span></li>
+              <li><span class="en">Not an income tax payer, not EPFO/ESIC member</span><span class="hi">Income tax payer na ho, EPFO/ESIC member na ho</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, bank account (Jan Dhan/savings), land records</span><span class="hi">Aadhaar, bank account (Jan Dhan/savings), zameen ke kagzaat</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at nearest CSC (Common Service Centre) or self-register at maandhan.in portal.</span><span class="hi">Nazdeeki CSC (Common Service Centre) mein register karein ya maandhan.in portal par self-registration karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://maandhan.in/shramyogi" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-267-6888</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 16. PM Garib Kalyan Anna Yojana -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌾</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Garib Kalyan Anna Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Food Security</span><span class="hi">खाद्य सुरक्षा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">5 kg free foodgrain (rice/wheat) per person per month to all NFSA beneficiaries. Extended till December 2028. No extra cost — 100% free.</span><span class="hi">Har NFSA beneficiary ko 5 kg anaj (chawal/gehu) har mahine bilkul free. December 2028 tak badhaya gaya. Koi paisa nahi lagta.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All NFSA (National Food Security Act) ration card holders</span><span class="hi">Sabhi NFSA ration card holders</span></li>
+              <li><span class="en">Approx. 80 crore beneficiaries across India</span><span class="hi">Poore India mein approx. 80 crore log</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Ration card linked with Aadhaar</span><span class="hi">Aadhaar se juda ration card</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">No separate application needed — just collect from your nearest fair price shop (ration shop) using Aadhaar-based authentication.</span><span class="hi">Alag se apply karne ki zarurat nahi — Aadhaar authentication se nazdeeki ration ki dukaan se le jaayein.</span></div>
+        </div>
+        <a class="official-btn" href="https://dfpd.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your state's Food Department</span><span class="hi">Apne rajya ke khadya vibhag se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 17. Pradhan Mantri Matru Vandana Yojana -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🤱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Matru Vandana Yojana (PMMVY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Health</span><span class="hi">महिला · स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹5,000 maternity benefit for 1st child (in 2 instalments). For 2nd child if girl, ₹6,000 in one instalment. Money transferred directly to bank account.</span><span class="hi">Pehle bacche ke liye ₹5,000 (2 kiston mein). Doosri beti ke liye ₹6,000 ek saath. Paisa seedha bank account mein.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Pregnant and lactating women (except central/state govt employees)</span><span class="hi">Pregnant aur stanpan krane wali mahilayein (govt employees ko chhod kar)</span></li>
+              <li><span class="en">For 1st pregnancy (or 2nd if girl child) registered at AWC/hospital</span><span class="hi">Pehli pregnancy (ya beti hone par doosri) ke liye AWC/hospital mein registered ho</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, MCP card (Mother Child Protection card), bank passbook, ration card</span><span class="hi">Aadhaar, MCP card, bank passbook, ration card</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at your nearest Anganwadi Centre (AWC) or apply online at pmmvy.wcd.gov.in.</span><span class="hi">Nazdeeki Anganwadi Centre (AWC) mein register karein ya pmmvy.wcd.gov.in par online apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmmvy.wcd.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>7998799804</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 18. Beti Bachao Beti Padhao -->
+  <div class="scheme-card" data-cat="women education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">📚</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Beti Bachao Beti Padhao</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Education</span><span class="hi">महिला · शिक्षा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Awareness campaign + financial incentives for saving and educating the girl child. Works in tandem with Sukanya Samriddhi Yojana for savings, and various state govt girl-child scholarships.</span><span class="hi">Beti bachane aur padhane ki jagrukta + financial incentives. Sukanya Samriddhi Yojana aur state scholarships ke saath milkar kaam karta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All families with girl children</span><span class="hi">Sabhi parivaar jahan beti ho</span></li>
+              <li><span class="en">Especially targeted at low child sex ratio districts</span><span class="hi">Khas kar un jiloon mein jahan sex ratio kam hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Open Sukanya Samriddhi account at post office/bank. For district-level benefits, contact local District Collector office or Women & Child Development dept.</span><span class="hi">Post office/bank mein Sukanya Samriddhi account khulwayein. District benefits ke liye District Collector ya WCD vibhag se sampark karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://wcd.nic.in/bbbp-schemes" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Women Helpline:</span><span class="hi">महिला हेल्पलाइन:</span> <b>181</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 19. PM Jan Arogya Yojana – Ayushman CAPF -->
+  <div class="scheme-card" data-cat="health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🩺</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Jeevan Jyoti Bima Yojana (PMJJBY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Insurance · Savings</span><span class="hi">बीमा · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹2 lakh life insurance cover on death (any cause) for just ₹436/year premium — auto-debited from bank account each June.</span><span class="hi">Maut hone par ₹2 lakh life insurance sirf ₹436/saal premium par — har June mein auto-debit.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Age 18–50 years with a savings bank account</span><span class="hi">18–50 saal ka koi bhi savings account holder</span></li>
+              <li><span class="en">Auto-renewal every year till age 55</span><span class="hi">Har saal auto-renew hota hai 55 saal tak</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Savings bank account, Aadhaar, consent form (available at bank)</span><span class="hi">Savings bank account, Aadhaar, consent form (bank se milega)</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit your bank branch or apply through net banking/mobile banking app. Can also enroll at CSC or via SMS banking.</span><span class="hi">Apni bank branch mein jaayein ya net banking/mobile app se apply karein. CSC ya SMS banking se bhi enroll kar sakte hain.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.jansuraksha.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your bank branch</span><span class="hi">Apni bank branch se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 20. PM Suraksha Bima Yojana -->
+  <div class="scheme-card" data-cat="savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🛡️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Suraksha Bima Yojana (PMSBY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Insurance</span><span class="hi">बीमा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Accident insurance — ₹2 lakh on accidental death or total disability, ₹1 lakh on partial disability. Premium only ₹20/year.</span><span class="hi">Durghatna bima — accidental maut ya poori apangta par ₹2 lakh, aadhi apangta par ₹1 lakh. Premium sirf ₹20/saal.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Age 18–70 years with an active savings bank account</span><span class="hi">18–70 saal ka savings bank account holder</span></li>
+              <li><span class="en">Aadhaar linked to bank account preferred</span><span class="hi">Bank account se Aadhaar linked ho toh behtar</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Enroll at any bank branch, internet banking, or CSC. Auto-renewal every June. Can also enroll via SMS banking.</span><span class="hi">Kisi bhi bank branch, internet banking, ya CSC se enroll karein. Har June mein auto-renew. SMS banking se bhi.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.jansuraksha.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your bank branch</span><span class="hi">Apni bank branch se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 21. PM SVANIDHI 2.0 / Rozgar Mela -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💡</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Kaushal Vikas Yojana (PMKVY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Skill · Employment</span><span class="hi">कौशल · रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free short-term skill training (3–6 months) in 300+ job roles across sectors like IT, construction, retail, healthcare, beauty, etc. Certificate recognised by industry. Placement assistance provided.</span><span class="hi">300+ job roles mein free skill training (3–6 mahine) — IT, construction, retail, healthcare, beauty etc. Industry-recognized certificate milta hai. Placement mein bhi madad.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens aged 15+ who are school dropouts or unemployed youth</span><span class="hi">15+ saal ke school dropout ya unemployed Indian youth</span></li>
+              <li><span class="en">No prior qualification needed for most courses</span><span class="hi">Zyaadatar courses ke liye koi purv yogyata nahi chahiye</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar card, bank account, passport size photo</span><span class="hi">Aadhaar card, bank account, passport size photo</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit Skill India portal or find nearest PMKVY Training Centre (TC) at skillindia.gov.in. Training is completely free of cost.</span><span class="hi">Skill India portal par jaayein ya nazdeeki PMKVY Training Centre dhoondein skillindia.gov.in par. Training bilkul free hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://skillindia.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-123-9626</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 22. National Health Mission - Janani Suraksha Yojana -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👩‍⚕️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Janani Suraksha Yojana (JSY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Health</span><span class="hi">महिला · स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Cash assistance to poor pregnant women for institutional delivery — ₹1,400 in rural areas, ₹1,000 in urban areas (Low Performing States get higher amounts). ASHA worker also gets incentive for helping.</span><span class="hi">Garib mahilaaon ko hospital mein delivery par cash — rural areas mein ₹1,400, urban mein ₹1,000. ASHA worker ko bhi incentive milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">BPL pregnant women of any age for up to 2 live births</span><span class="hi">BPL pregnant mahilayein, 2 jeevan bachhon tak</span></li>
+              <li><span class="en">SC/ST women eligible regardless of BPL status</span><span class="hi">SC/ST mahilayein bina BPL card ke bhi eligible hain</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, BPL/SC/ST certificate, bank account, JSY card (issued at time of ANC registration)</span><span class="hi">Aadhaar, BPL/SC/ST certificate, bank account, JSY card (ANC registration par milega)</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at nearest government PHC/CHC/hospital during pregnancy. ASHA worker at your village can guide you.</span><span class="hi">Pregnancy ke dauran nazdeeki sarkari PHC/CHC/hospital mein register karein. Gaon ki ASHA worker se madad lein.</span></div>
+        </div>
+        <a class="official-btn" href="https://nhm.gov.in/index1.php?lang=1&level=3&sublinkid=841&lid=309" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">NHM Helpline:</span><span class="hi">NHM हेल्पलाइन:</span> <b>1800-180-1104</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 23. PM Ujjwala 2.0 + Free Cylinder -->
+  <div class="scheme-card" data-cat="housing farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🚰</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Jal Jeevan Mission (Har Ghar Jal)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing · Rural</span><span class="hi">आवास · ग्रामीण</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Functional Household Tap Connection (FHTC) to every rural home — potable drinking water at 55 LPCD (litres per capita per day). Infrastructure provided by govt, no cost to household.</span><span class="hi">Har gramin ghar mein nalke ka saaf peene ka paani — 55 litre per din. Infrastructure sarkaar deti hai, parivaar ko koi kharcha nahi.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All rural households without tap water connection</span><span class="hi">Sabhi gramin parivaar jahan abhi nal nahi hai</span></li>
+              <li><span class="en">Prioritizes SC/ST, BPL, and quality-affected habitations</span><span class="hi">SC/ST, BPL aur paani ki quality se prabhavit gaon ko pehle priority</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">No individual application needed — scheme is implemented through Gram Panchayat/Village Water Sanitation Committee. Contact your Gram Panchayat to check status.</span><span class="hi">Alag se apply karne ki zarurat nahi — Gram Panchayat/Village Water Sanitation Committee lagati hai. Apni Gram Panchayat se status poochhein.</span></div>
+        </div>
+        <a class="official-btn" href="https://jaljeevanmission.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-180-0019 (JJM)</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 24. PM Saubhagya Yojana -->
+  <div class="scheme-card" data-cat="housing">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💡</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Saubhagya Yojana (Free Electricity)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing · Rural</span><span class="hi">आवास · ग्रामीण</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free electricity connection to all un-electrified households (BPL families get it completely free; APL families pay ₹500 in installments). Includes wiring, LED bulbs, and mobile charging point.</span><span class="hi">Sabhi ghar jahan bijli nahi hai unhe free connection — BPL parivaar ko bilkul free, APL parivaar ₹500 kiston mein. Wiring, LED bulbs, aur mobile charging point bhi.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Un-electrified households in rural and urban areas</span><span class="hi">Rural aur urban dono areas ke voh ghar jahan bijli ka connection nahi hai</span></li>
+              <li><span class="en">BPL households get connection absolutely free</span><span class="hi">BPL parivaar ko bilkul bhi paisa nahi dena</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Contact your nearest power distribution company (DISCOM) office or apply at saubhagya.gov.in portal.</span><span class="hi">Nazdeeki DISCOM office se sampark karein ya saubhagya.gov.in par apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://saubhagya.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your state DISCOM office</span><span class="hi">Apne rajya ke DISCOM office se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 25. Stand Up India -->
+  <div class="scheme-card" data-cat="employment women">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">📈</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Stand Up India Scheme</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Employment</span><span class="hi">महिला · रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Bank loan between ₹10 lakh to ₹1 crore for setting up a greenfield enterprise in manufacturing, services, or trading sector. At least one SC/ST and one woman borrower per bank branch.</span><span class="hi">Manufacturing, services, ya trading mein naya business khulne ke liye ₹10 lakh se ₹1 crore bank loan. Har bank branch mein kam se kam ek SC/ST aur ek mahila borrower.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">SC/ST and/or women entrepreneurs (above 18 years)</span><span class="hi">SC/ST aur/ya mahila udyamita (18+ saal)</span></li>
+              <li><span class="en">First-time enterprise (greenfield) only</span><span class="hi">Sirf pehla naya business (greenfield)</span></li>
+              <li><span class="en">Borrower must not be in default to any bank/financial institution</span><span class="hi">Kisi bank/financial institution mein default na ho</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, PAN, caste certificate (SC/ST), business plan, bank statements, property documents if available</span><span class="hi">Aadhaar, PAN, jaati praman patra (SC/ST ke liye), business plan, bank statements</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at standupmitra.in portal or visit nearest scheduled commercial bank branch directly.</span><span class="hi">standupmitra.in par apply karein ya nazdeeki scheduled commercial bank branch mein seedha jaayein.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.standupmitra.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-180-1111</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 26. PM WANI (WiFi Access Network Interface) -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">📡</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Gramin Digital Saksharta Abhiyan (PMGDISHA)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education · Digital</span><span class="hi">शिक्षा · डिजिटल</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free digital literacy training to rural citizens — learn to use internet, mobile banking, UPI, government portals, email, and more. Certificate provided after training.</span><span class="hi">Rural nagrikoon ko free digital literacy training — internet, mobile banking, UPI, sarkari portals, email sikhna. Training ke baad certificate milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Rural household members aged 14–60 who are not digitally literate</span><span class="hi">14–60 saal ke gramin parivaar ke log jo digitally literate nahi hain</span></li>
+              <li><span class="en">One member per eligible rural household</span><span class="hi">Har eligible gramin ghar se ek sadasy</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at pmgdisha.in or visit nearest CSC/PMGDISHA training centre. Training is 20 hours total (can be done part-time).</span><span class="hi">pmgdisha.in par register karein ya nazdeeki CSC/training centre jaayein. 20 ghante ki training (part-time bhi kar sakte hain).</span></div>
+        </div>
+        <a class="official-btn" href="https://pmgdisha.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-3000-3468</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 27. Deen Dayal Upadhyaya Grameen Kaushalya Yojana -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🧱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">DDU-GKY (Deen Dayal Upadhyaya Grameen Kaushalya Yojana)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Skill · Employment</span><span class="hi">कौशल · रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free residential skill training for rural youth with guaranteed placement. Covers training cost, boarding & lodging, transport, and post-placement support. Minimum ₹6,000/month salary after placement.</span><span class="hi">Rural youth ke liye free residential skill training aur guaranteed placement. Training, rehne-khane, transport sab free. Placement ke baad minimum ₹6,000/mahine salary.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Rural youth aged 15–35 years (45 years for women/SC/ST/PWD/ex-servicemen)</span><span class="hi">Rural youth 15–35 saal (mahila/SC/ST/divyang ke liye 45 saal)</span></li>
+              <li><span class="en">Must be from MGNREGS household or below poverty line</span><span class="hi">MGNREGS household ya BPL parivaar se hona chahiye</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Contact your Block Development Officer (BDO) or nearest DDU-GKY empanelled training partner. Also check ddugky.gov.in.</span><span class="hi">Block Development Officer (BDO) ya nazdeeki DDU-GKY training partner se milein. ddugky.gov.in bhi check karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://ddugky.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your Block Development Officer</span><span class="hi">Apne Block Development Officer se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 28. MGNREGS -->
+  <div class="scheme-card" data-cat="employment farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">⛏️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">MGNREGS (Mahatma Gandhi NREGS)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment · Rural</span><span class="hi">रोजगार · ग्रामीण</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Legal guarantee of 100 days of wage employment per year to rural household adults willing to do unskilled manual work. Wages vary by state (approx. ₹200–350/day). If work not provided within 15 days, unemployment allowance payable.</span><span class="hi">Rural parivaar ko saal mein 100 din ke rozgar ki kanooni guarantee. Wages state ke hisaab se (lagbhag ₹200–350/din). 15 din mein kaam na mile toh unemployment allowance milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Any adult member (18+) of a rural household willing to do unskilled manual work</span><span class="hi">Rural household ka koi bhi 18+ saal ka vyakti jo shramik kaam karne ko taiyar ho</span></li>
+              <li><span class="en">Must have Job Card issued by Gram Panchayat</span><span class="hi">Gram Panchayat se Job Card hona zaroori hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at Gram Panchayat to get a Job Card (free). Then submit work application when needed. Payments directly to bank/post office account.</span><span class="hi">Gram Panchayat mein register karke Job Card banwayein (bilkul free). Kaam ki zarurat hone par application dein. Payment seedha bank/post office account mein.</span></div>
+        </div>
+        <a class="official-btn" href="https://nrega.nic.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-111-555</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 29. PM Ujjwala 2.0 - Pahal Subsidy -->
+  <div class="scheme-card" data-cat="women savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🍳</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pahal – LPG Subsidy (DBTL)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Savings</span><span class="hi">महिला · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">LPG cylinder subsidy directly transferred to bank account after purchasing cylinder at market price. Eligible households get subsidy amount back within days. Saves hundreds of rupees per refill.</span><span class="hi">LPG cylinder market price par khareedne ke baad subsidy seedha bank account mein aati hai. Har refill par saikdon rupaye bachte hain.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All domestic LPG consumers with Aadhaar-linked bank account</span><span class="hi">Sabhi domestic LPG consumers jinka bank account Aadhaar se linked ho</span></li>
+              <li><span class="en">Not applicable to those who have opted out (GiveItUp campaign)</span><span class="hi">Jo GiveItUp campaign mein opt-out kar chuke hain unhe nahi milti</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar linked to LPG consumer ID and bank account</span><span class="hi">Aadhaar ko LPG consumer ID aur bank account se link karein</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Link Aadhaar with your LPG connection at distributor or via MyLPG app/portal. Subsidy auto-credited after each refill.</span><span class="hi">Distributor ya MyLPG app par Aadhaar link karein. Subsidy har refill ke baad auto-credit ho jaati hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://mylpg.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1906</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 30. PM Scholarship Scheme (Central Armed Police Forces) -->
+  <div class="scheme-card" data-cat="education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🎖️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Scholarship Scheme (PMSS)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education</span><span class="hi">शिक्षा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹3,000/month (boys) and ₹3,500/month (girls) scholarship for wards of ex-servicemen, police martyrs and CAPF personnel. For professional degree courses (MBBS, BE, MBA etc.).</span><span class="hi">Ex-servicemen aur police shaheedon ke bachhon ke liye ₹3,000/mahine (ladke) aur ₹3,500/mahine (ladkiyaan). Professional degree courses ke liye.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Wards/widows of ex-Armed Forces/CAPF/RPF/State Police personnel killed in duty</span><span class="hi">Sena/CAPF/RPF mein shaheed jawan ke bachche ya bewa</span></li>
+              <li><span class="en">Minimum 60% marks in qualifying exam</span><span class="hi">Qualifying exam mein minimum 60% marks</span></li>
+              <li><span class="en">First year of professional degree course</span><span class="hi">Professional degree ke pehle saal mein hona chahiye</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply online at National Scholarship Portal (scholarships.gov.in) during the application window (usually August–October).</span><span class="hi">National Scholarship Portal (scholarships.gov.in) par apply karein — aavedaan window aam taur par August–October mein hoti hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://scholarships.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>0120-6619540</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 31. Soil Health Card Scheme -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌍</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Soil Health Card Scheme (Mitti Swasthya Patra)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer</span><span class="hi">किसान</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free soil testing and a Soil Health Card showing nutrient status of your land — tells exactly which fertilizers and how much to use. Saves money on excess fertilizer and increases crop yield.</span><span class="hi">Free mitti jaanch aur Soil Health Card — aapki zameen mein kaunse nutrients hain, kaunsa fertilizer kitna dalna hai. Fertilizer ka paisa bachta hai aur paidawar badhti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All farmers with agricultural land — free of cost</span><span class="hi">Sabhi kisaan jinka khet ho — bilkul muft</span></li>
+              <li><span class="en">Card issued every 2 years</span><span class="hi">Har 2 saal mein card milta hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Contact your nearest Krishi Vigyan Kendra (KVK), Agriculture Department office, or apply at soilhealth.dac.gov.in.</span><span class="hi">Nazdeeki Krishi Vigyan Kendra (KVK), Krishi Vibhag office se sampark karein, ya soilhealth.dac.gov.in par apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://soilhealth.dac.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Kisan Call Centre:</span><span class="hi">किसान कॉल सेंटर:</span> <b>1800-180-1551</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 32. PM Kisan Samman Nidhi + KCC -->
+  <div class="scheme-card" data-cat="farmer savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💳</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Kisan Credit Card (KCC)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer · Savings</span><span class="hi">किसान · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Flexible revolving credit for farmers — upto ₹3 lakh at just 4% interest (after govt interest subvention of 3%). Use for seeds, fertilizers, pesticides, equipment maintenance. No need to visit bank each time.</span><span class="hi">Kisaanon ke liye ₹3 lakh tak credit sirf 4% byaaj par (3% govt subvention ke baad). Beej, khaad, davaai, equipment — jab chahiye paisa nikalo.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All farmers — individual/joint/tenant farmers and sharecroppers</span><span class="hi">Sabhi kisaan — individual, joint, tenant farmer aur bataidaar</span></li>
+              <li><span class="en">Also available for fishermen and animal husbandry farmers</span><span class="hi">Machhuaare aur pashu palak bhi eligible hain</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, land records/lease agreement, passport photo, bank account</span><span class="hi">Aadhaar, zameen ke kagzaat / lease agreement, photo, bank account</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at any nationalized bank, cooperative bank, or regional rural bank. Can also apply via PM-KISAN portal if already registered there.</span><span class="hi">Kisi bhi nationalized bank, cooperative bank, ya regional rural bank mein apply karein. PM-KISAN portal par bhi kar sakte hain.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmkisan.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Kisan Call Centre:</span><span class="hi">किसान कॉल सेंटर:</span> <b>1800-180-1551</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 33. Disability Certificate + UDID Card -->
+  <div class="scheme-card" data-cat="health savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">♿</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">UDID Card – Unique Disability ID (Divyangjan)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Health · Disability</span><span class="hi">स्वास्थ्य · दिव्यांग</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Single card that serves as disability certificate + ID. Unlocks: free bus/railway travel concession, reservation in govt jobs (4%), scholarship, free orthotic aids (artificial limbs, wheelchairs, hearing aids via ADIP scheme), and priority in all welfare schemes.</span><span class="hi">Ek card jo disability certificate bhi hai aur ID bhi. Milta hai: free bus/train travel, sarkari naukri mein 4% reservation, scholarship, free wheelchair/hearing aid/nakli ang (ADIP yojana), aur sabhi yojanaon mein priority.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Persons with 40%+ benchmark disability (21 categories under RPWD Act 2016)</span><span class="hi">40%+ disability wale vyakti (RPWD Act 2016 ke 21 prakar)</span></li>
+              <li><span class="en">Includes visual, hearing, locomotor, intellectual, mental illness disabilities</span><span class="hi">Drishti, shravana, chalana, mansik, bauddhik — sabhi prakar ki divyangta</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, passport photo, medical documents related to disability</span><span class="hi">Aadhaar, passport photo, divyangta se sambandhit medical documents</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at swavlambancard.gov.in — medical officer at govt hospital will assess and issue the certificate + UDID card. Free of cost.</span><span class="hi">swavlambancard.gov.in par register karein — sarkari hospital ka medical officer jaanch kark certificate aur UDID card dega. Bilkul free.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.swavlambancard.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Divyangjan Helpline:</span><span class="hi">दिव्यांगजन हेल्पलाइन:</span> <b>1800-11-4515</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 34. PM Awas Yojana Urban 2.0 -->
+  <div class="scheme-card" data-cat="housing savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏗️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Awas Yojana Urban 2.0 (PMAY-U 2.0)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing</span><span class="hi">आवास</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹2.5 lakh central assistance for EWS beneficiaries to build/buy a pucca house. Interest subsidy up to ₹1.80 lakh on home loans for LIG/MIG families. Target: 1 crore urban houses by 2029.</span><span class="hi">EWS parivaar ko pakka ghar banane/khareedne ke liye ₹2.5 lakh central sahayata. LIG/MIG families ko home loan par ₹1.80 lakh tak ki byaaj subsidy. Target: 2029 tak 1 crore shahari ghar.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">EWS: Annual income upto ₹3 lakh | LIG: ₹3–6 lakh | MIG: ₹6–9 lakh</span><span class="hi">EWS: Saalana aay ₹3 lakh tak | LIG: ₹3–6 lakh | MIG: ₹6–9 lakh</span></li>
+              <li><span class="en">Family should not own a pucca house anywhere in India</span><span class="hi">Parivaar ke paas India mein kahin bhi pakka ghar na ho</span></li>
+              <li><span class="en">Women ownership/co-ownership mandatory for EWS/LIG</span><span class="hi">EWS/LIG mein mahila ka naam property mein zaroori</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, income certificate, bank account, property documents, home loan sanction letter (if applicable)</span><span class="hi">Aadhaar, aay praman patra, bank account, zameen ke kagzaat, home loan sanction letter (agar ho)</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at pmaymis.gov.in or visit your Urban Local Body (Municipal Corporation/Nagar Panchayat) office.</span><span class="hi">pmaymis.gov.in par apply karein ya apne Urban Local Body (Nagar Palika/Nagar Panchayat) office jaayein.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmaymis.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-11-6446</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 35. National Pension System (NPS) -->
+  <div class="scheme-card" data-cat="pension savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏦</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">National Pension System (NPS)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Pension · Savings</span><span class="hi">पेंशन · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Market-linked pension savings scheme — invest monthly, get lump sum + monthly pension at 60. Extra ₹50,000 tax deduction under Section 80CCD(1B) over and above 80C limit. Low fund management charges.</span><span class="hi">Market-linked pension scheme — har mahine invest karo, 60 saal par lump sum + monthly pension. Section 80CCD(1B) mein ₹50,000 extra tax deduction. Fund management charges bahut kam.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens aged 18–70 (including NRIs)</span><span class="hi">18–70 saal ke Indian citizens (NRI bhi)</span></li>
+              <li><span class="en">Both salaried and self-employed can join</span><span class="hi">Naukri wale aur self-employed dono join kar sakte hain</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, PAN, bank account, passport photo</span><span class="hi">Aadhaar, PAN, bank account, passport photo</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Open NPS account at any Point of Presence (PoP) — bank branches, post offices — or online at eNPS portal (enps.nsdl.com). Minimum contribution ₹500/month.</span><span class="hi">Kisi bhi bank/post office mein ya enps.nsdl.com par online NPS account khulwayein. Minimum ₹500/mahine.</span></div>
+        </div>
+        <a class="official-btn" href="https://npscra.nsdl.co.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-110-708</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 36. PM Poshan Shakti Nirman (Mid-Day Meal) -->
+  <div class="scheme-card" data-cat="education health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🍱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Poshan Shakti Nirman (Mid-Day Meal)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education · Health</span><span class="hi">शिक्षा · स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free hot cooked nutritious meal every school day for students of Class 1–8 in govt and govt-aided schools. Improves nutrition, boosts school attendance, and reduces dropout rates.</span><span class="hi">Sarkari aur aided schools mein Class 1–8 ke bachhon ko har school day free garam poshtik khana. Sehat badhti hai, school attendance badh jaati hai, dropout kam hota hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All students enrolled in Class 1–8 in government and government-aided schools</span><span class="hi">Sarkari aur sarkari-sahayata prapt schools mein Class 1–8 mein padhne wale sabhi bachche</span></li>
+              <li><span class="en">No application needed — automatic benefit</span><span class="hi">Koi application nahi chahiye — apne aap milta hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">No application required. Enroll your child in a government school and they automatically receive the mid-day meal.</span><span class="hi">Koi application nahi chahiye. Bachche ko sarkari school mein daakhil karein — khana apne aap milega.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmposhan.education.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Contact your District Education Officer</span><span class="hi">Apne Zila Shiksha Adhikari se sampark karein</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 37. Har Ghar Bijli (Saubhagya + PM Surya Ghar) -->
+  <div class="scheme-card" data-cat="housing savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">☀️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Surya Ghar – Free Solar Rooftop</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing · Savings</span><span class="hi">आवास · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Up to ₹78,000 subsidy on solar rooftop installation — get 300 units free electricity per month. Sell extra electricity back to grid and earn money. Target: 1 crore homes by 2027.</span><span class="hi">Solar rooftop lagwane par ₹78,000 tak ki subsidy — 300 unit free bijli har mahine. Baaki bijli grid ko bechke kamaai karo. Target: 2027 tak 1 crore ghar.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Residential electricity consumers with a valid electricity connection</span><span class="hi">Valid bijli connection wale residential consumers</span></li>
+              <li><span class="en">Must have own rooftop space (approx. 10 sq.m minimum for 1 kW)</span><span class="hi">Khud ki chhat honi chahiye (1 kW ke liye approx. 10 sq.m)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Subsidy Amount</span><span class="hi">सब्सिडी राशि</span></div>
+          <div class="info-value"><span class="en">1 kW: ₹30,000 | 2 kW: ₹60,000 | 3 kW+: ₹78,000 (max). Additional loan available at low interest.</span><span class="hi">1 kW: ₹30,000 | 2 kW: ₹60,000 | 3 kW+: ₹78,000 (max). Kam byaaj par loan bhi available.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at pmsuryaghar.gov.in — choose empanelled vendor from portal, get installation, then apply for subsidy online. Process takes about 30 days.</span><span class="hi">pmsuryaghar.gov.in par apply karein — portal se empanelled vendor chunein, installation karwayen, phir subsidy ke liye online apply karein. Lagbhag 30 din mein kaam hota hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmsuryaghar.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-180-3333</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 38. PMEGP - PM Employment Generation Programme -->
+  <div class="scheme-card" data-cat="employment savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏭</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Employment Generation Programme (PMEGP)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment · Loan</span><span class="hi">रोजगार · लोन</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Set up a new micro-enterprise with govt subsidy — manufacturing upto ₹50 lakh project cost (35% subsidy for rural SC/ST/women/special category), service sector upto ₹20 lakh (25% subsidy general, 35% special). Rest as bank loan.</span><span class="hi">Naya micro-enterprise lagao — manufacturing mein ₹50 lakh tak (35% subsidy rural SC/ST/mahila ke liye), service sector ₹20 lakh tak (25–35% subsidy). Baaki bank loan.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Any individual 18+ years — for manufacturing unit, 8th pass required; for above ₹10 lakh service, 8th pass required</span><span class="hi">18+ saal ka koi bhi — manufacturing unit ke liye 8th pass; ₹10 lakh se upar service ke liye bhi</span></li>
+              <li><span class="en">New enterprises only (not existing businesses)</span><span class="hi">Sirf naya enterprise — purana business nahi</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Documents</span><span class="hi">दस्तावेज़</span></div>
+          <div class="info-value"><span class="en">Aadhaar, PAN, educational certificate, project report, caste/special category certificate if applicable</span><span class="hi">Aadhaar, PAN, shiksha praman patra, project report, jaati praman patra (agar lagta ho)</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply online at kviconline.gov.in or visit nearest KVIC/KVIB/DIC office. Free application, no agent needed.</span><span class="hi">kviconline.gov.in par online apply karein ya nazdeeki KVIC/KVIB/DIC office jaayein. Application free hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://kviconline.gov.in/pmegpeportal" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">KVIC Helpline:</span><span class="hi">KVIC हेल्पलाइन:</span> <b>1800-3000-0034</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 39. Anganwadi + ICDS Poshan Abhiyan -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👶</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Poshan Abhiyan (National Nutrition Mission)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Health</span><span class="hi">महिला · स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free nutrition services via Anganwadi centres: supplementary food for children (0–6 years) and pregnant/lactating women, growth monitoring, health checkups, immunization, pre-school education, and referral services.</span><span class="hi">Anganwadi ke zariye free poshan — 0–6 saal ke bachche aur pregnant/stanpan mahilaon ko supplementary food, growth monitoring, health checkup, immunization, pre-school education.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Children aged 0–6 years</span><span class="hi">0–6 saal ke bachche</span></li>
+              <li><span class="en">Pregnant women and lactating mothers (upto 6 months post-delivery)</span><span class="hi">Pregnant mahilayein aur delivery ke 6 mahine baad tak stanpan karne wali maatayein</span></li>
+              <li><span class="en">Adolescent girls (11–14 years) in some states</span><span class="hi">Kuch rajyon mein 11–14 saal ki ladkiyaan bhi</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit your nearest Anganwadi Centre — register with the Anganwadi Worker (AWW). No documents needed initially, just basic details.</span><span class="hi">Nazdeeki Anganwadi Centre mein jaayein — Anganwadi Worker se register karein. Shuruaat mein koi document nahi chahiye.</span></div>
+        </div>
+        <a class="official-btn" href="https://poshanabhiyaan.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Poshan Helpline:</span><span class="hi">पोषण हेल्पलाइन:</span> <b>1800-11-8004</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 40. PM Yuva 2.0 - Mentorship for Young Writers -->
+  <div class="scheme-card" data-cat="education employment">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">✍️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM YUVA 2.0 – Young Author Mentorship</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education · Youth</span><span class="hi">शिक्षा · युवा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹50,000/month stipend for 6 months to selected young authors (30 under-30) to write books on Indian culture, history, and heritage. Book published by National Book Trust and royalties given.</span><span class="hi">30 chune hue young authors ko 6 mahine ₹50,000/mahine stipend. Bharat ki sanskriti, itihas, virasat par kitaab likhen. National Book Trust prakashan karta hai aur royalty milti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens below 30 years of age</span><span class="hi">30 saal se kam umra ke Indian nagarik</span></li>
+              <li><span class="en">Must submit a writing sample/manuscript as entry</span><span class="hi">Ek writing sample / manuscript submit karna hoga</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Applications open periodically on innovateindia.mygov.in. Watch for announcements on MyGov portal and apply during open window.</span><span class="hi">Applications innovateindia.mygov.in par samay-samay par khulti hain. MyGov portal par announcement dekhein aur apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://innovateindia.mygov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">MyGov Helpline:</span><span class="hi">MyGov हेल्पलाइन:</span> <b>1800-117-2306</b></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 41. PM Awas Yojana - Gramin -->
+  <div class="scheme-card" data-cat="housing">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏡</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Awas Yojana – Gramin (PMAY-G)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing · Rural</span><span class="hi">आवास · ग्रामीण</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Financial assistance of ₹1.20 lakh (plain areas) and ₹1.30 lakh (hilly/difficult areas) for construction of a pucca house. Additional ₹12,000 for toilet under Swachh Bharat Mission.</span><span class="hi">Pucca ghar banane ke liye ₹1.20 lakh (samtal ilaakon mein) aur ₹1.30 lakh (pahadi/mushkil ilaakon mein). Swachh Bharat Mission ke under shauchalay ke liye ₹12,000 alag.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">BPL families in rural areas who are houseless or living in kutcha houses</span><span class="hi">Gramin ilaakon mein BPL parivaar jo bemisar hain ya kachche ghar mein rehte hain</span></li>
+              <li><span class="en">Priority to SC/ST, minorities, widow-headed households, disabled persons</span><span class="hi">SC/ST, minorities, vidhwa parivaaron, divyang vyaktiyon ko priority</span></li>
+              <li><span class="en">Must be listed in SECC 2011 data</span><span class="hi">SECC 2011 data mein naam hona zaroori hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply through Gram Panchayat or Block Development Officer (BDO). Beneficiary list is based on SECC 2011 — check your name on pmayg.nic.in.</span><span class="hi">Gram Panchayat ya Block Development Officer (BDO) ke zariye apply karein. Beneficiary list SECC 2011 par based hai — apna naam pmayg.nic.in par check karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmayg.nic.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-11-6446</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 42. Sukanya Samriddhi Yojana -->
+  <div class="scheme-card" data-cat="savings women education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👧</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Sukanya Samriddhi Yojana (SSY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Savings · Girl Child</span><span class="hi">बचत · बेटी</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">High-interest small savings scheme for girl child — currently 8.2% p.a. (tax-free). Deposit min ₹250 to max ₹1.5 lakh per year. Maturity at 21 years from account opening. Tax exemption under Section 80C.</span><span class="hi">Beti ke liye high-interest savings — abhi 8.2% p.a. (tax-free). Min ₹250 se max ₹1.5 lakh saal mein jama karein. Account khulne se 21 saal mein maturity. Section 80C ke under tax exemption.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Girl child below 10 years of age</span><span class="hi">10 saal se kam umra ki beti</span></li>
+              <li><span class="en">Account opened by parent/guardian</span><span class="hi">Account maa-baap ya guardian khol sakte hain</span></li>
+              <li><span class="en">Max 2 accounts per family (one per girl child)</span><span class="hi">Ek parivaar mein max 2 accounts (ek beti ke liye ek)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit any Post Office or authorized bank branch with girl's birth certificate, parent's Aadhaar/PAN, and photo. Fill SSY account opening form.</span><span class="hi">Nazdeeki Post Office ya authorized bank branch mein jaayein. Beti ka birth certificate, maa-baap ka Aadhaar/PAN aur photo lekar SSY account opening form bharein.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.nsiindia.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Post Office Helpline:</span><span class="hi">Post Office हेल्पलाइन:</span> <b>1800-112-011</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 43. National Apprenticeship Training Scheme -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🔧</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">National Apprenticeship Training Scheme (NATS)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment · Skill</span><span class="hi">रोजगार · कौशल</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">1–2 year on-the-job training with monthly stipend (min ₹9,000/month for graduates). Government pays 50% of stipend (up to ₹4,500/month). Practical industry experience + apprenticeship certificate.</span><span class="hi">1–2 saal on-the-job training ke saath monthly stipend (graduates ke liye min ₹9,000/mahine). Sarkar 50% stipend deti hai (max ₹4,500/mahine). Practical experience + apprenticeship certificate milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Engineering graduates/diploma holders/10th or 12th pass</span><span class="hi">Engineering graduates/diploma holders/10th ya 12th pass</span></li>
+              <li><span class="en">Age 16–35 years</span><span class="hi">Umra 16–35 saal</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register free at nats.education.gov.in. Upload educational certificates and Aadhaar. Search and apply for apprenticeship openings online.</span><span class="hi">nats.education.gov.in par free registration karein. Educational certificates aur Aadhaar upload karein. Online apprenticeship openings dekhen aur apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://nats.education.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">NATS Helpline:</span><span class="hi">NATS हेल्पलाइन:</span> <b>1800-425-1015</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 44. PM Fasal Bima Yojana -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🌱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Fasal Bima Yojana (PMFBY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer · Insurance</span><span class="hi">किसान · बीमा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Crop insurance at very low premium — 2% for Kharif, 1.5% for Rabi, 5% for commercial/horticultural crops. Remaining premium paid by government. Coverage for crop losses due to natural calamities, pests and diseases.</span><span class="hi">Bahut kam premium par fasal bima — Kharif ke liye 2%, Rabi ke liye 1.5%, commercial/horticultural fasal ke liye 5%. Baaki premium sarkar deti hai. Prakritik aapda, keede-maakor aur bimaari se fasal nuksan ka mawwajza milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All farmers — loanee and non-loanee, sharecroppers and tenant farmers</span><span class="hi">Sabhi kisaan — karz lene wale aur bina karz ke, bataaidaar aur kiraye ke kisaan bhi</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply via pmfby.gov.in or nearest bank/CSC/insurance company office before the crop season's cut-off date. Loanee farmers are enrolled automatically.</span><span class="hi">Fasal sezon ki cut-off date se pehle pmfby.gov.in ya bank/CSC/insurance company mein apply karein. Karz lene wale kisaan automatically enroll ho jaate hain.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmfby.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-200-7710</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 45. Pradhan Mantri Matru Vandana Yojana -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🤱</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Matru Vandana Yojana (PMMVY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · Maternity</span><span class="hi">महिला · मातृत्व</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">₹5,000 maternity benefit for first living child (in 3 instalments). For second child (if girl), additional ₹6,000. Amount transferred directly to mother's bank account via DBT.</span><span class="hi">Pehle zinda bachche ke liye ₹5,000 maternity benefit (3 kishton mein). Doosre bachche ke liye (agar ladki ho) ₹6,000 alag. Rakam seedha maa ke bank account mein DBT se jaati hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Pregnant women and lactating mothers for first child (all categories)</span><span class="hi">Pehle bachche ke liye sabhi pregnant mahilayein aur stanpan karne wali maatayein</span></li>
+              <li><span class="en">For second child benefit — only if second child is a girl</span><span class="hi">Doosre bachche ka laabh — sirf tab jab doosra bachcha ladki ho</span></li>
+              <li><span class="en">Central/State government employees not eligible</span><span class="hi">Central/State sarkari naukri wali mahilayein eligible nahi hain</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at nearest Anganwadi Centre or approved health facility within 150 days of last menstrual period (LMP). Fill PMMVY forms 1A, 1B, 1C at different stages.</span><span class="hi">LMP ke 150 din ke andar nazdeeki Anganwadi Centre ya approved health facility mein register karein. Alag-alag stages par PMMVY form 1A, 1B, 1C bharein.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmmvy.wcd.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">WCD Helpline:</span><span class="hi">WCD हेल्पलाइन:</span> <b>181</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 46. Atal Pension Yojana -->
+  <div class="scheme-card" data-cat="pension savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">👴</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Atal Pension Yojana (APY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Pension · Savings</span><span class="hi">पेंशन · बचत</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Guaranteed monthly pension of ₹1,000 to ₹5,000 after age 60. Pension amount depends on contribution and age at enrollment. On death, spouse gets pension; after spouse, nominee gets corpus amount.</span><span class="hi">60 saal ki umra ke baad ₹1,000 se ₹5,000 monthly guaranteed pension. Pension amount contribution aur enrollment umra par depend karta hai. Mrityu par spouse ko pension; uske baad nominee ko corpus milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens aged 18–40 years</span><span class="hi">18–40 saal ke Indian nagarik</span></li>
+              <li><span class="en">Must have a savings bank account</span><span class="hi">Savings bank account hona zaroori hai</span></li>
+              <li><span class="en">Income tax payers are NOT eligible (as of Oct 2022)</span><span class="hi">Income tax bharane wale eligible NAHI hain (Oct 2022 se)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit your bank branch or apply online through net banking/mobile banking. Fill APY subscriber registration form. Auto-debit of contribution from your savings account.</span><span class="hi">Bank branch mein jaayein ya net banking/mobile banking se online apply karein. APY subscriber registration form bharein. Contribution aapke savings account se auto-debit hoga.</span></div>
+        </div>
+        <a class="official-btn" href="https://npscra.nsdl.co.in/scheme-details.php" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">NPS Helpline:</span><span class="hi">NPS हेल्पलाइन:</span> <b>1800-110-708</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 47. Stand-Up India Scheme -->
+  <div class="scheme-card" data-cat="employment women">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💼</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Stand-Up India Scheme</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment · Women · SC/ST</span><span class="hi">रोजगार · महिला · SC/ST</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Bank loans between ₹10 lakh and ₹1 crore to SC/ST and women entrepreneurs for setting up greenfield enterprises in manufacturing, services, or trading sector. Composite loan covers 75% of project cost.</span><span class="hi">SC/ST aur mahila udyamion ko manufacturing, services ya trading mein naya udhyog shuru karne ke liye ₹10 lakh se ₹1 crore ka bank loan. Composite loan project cost ka 75% cover karta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">SC/ST borrowers or women entrepreneurs above 18 years</span><span class="hi">18+ saal ke SC/ST ya mahila udyami</span></li>
+              <li><span class="en">For non-individual enterprises, at least 51% shareholding by SC/ST or woman</span><span class="hi">Firm/company ke liye SC/ST ya mahila ka kam se kam 51% shareholding</span></li>
+              <li><span class="en">Should not be defaulter to any bank</span><span class="hi">Kisi bhi bank mein defaulter na ho</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply online at standupmitra.in or visit any Scheduled Commercial Bank branch. Portal has hand-holding support, training and mentorship resources.</span><span class="hi">standupmitra.in par online apply karein ya kisi bhi Scheduled Commercial Bank branch mein jaayein. Portal par training aur mentorship support bhi available hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.standupmitra.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-180-1111</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 48. PM Kaushal Vikas Yojana -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🎓</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM Kaushal Vikas Yojana (PMKVY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Skill · Employment</span><span class="hi">कौशल · रोजगार</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free short-term skill training (150–300 hours) in 300+ job roles across 30+ sectors. Upon successful assessment, government-recognized certificate plus monetary reward. Post-training placement assistance provided.</span><span class="hi">30+ sectors mein 300+ job roles ke liye free short-term skill training (150–300 ghante). Successful assessment ke baad government-recognized certificate aur monetary reward. Training ke baad placement support bhi milti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens who are school/college dropouts or unemployed</span><span class="hi">School/college dropout ya berozgaar Indian nagarik</span></li>
+              <li><span class="en">Age 15 years and above</span><span class="hi">15 saal ya usse adhik umra</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register at skillindiadigital.gov.in or visit nearest PMKVY training centre. Enroll in desired course. Training is completely free of cost.</span><span class="hi">skillindiadigital.gov.in par register karein ya nazdeeki PMKVY training centre jaayein. Pasandida course mein enroll karein. Training bilkul free hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.skillindiadigital.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Skill India Helpline:</span><span class="hi">Skill India हेल्पलाइन:</span> <b>1800-123-9626</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 49. National Social Assistance Programme - NSAP -->
+  <div class="scheme-card" data-cat="pension">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🧓</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">National Social Assistance Programme (NSAP)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Pension · BPL</span><span class="hi">पेंशन · BPL</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Monthly pension of ₹200–₹500 to old-age/widow/disabled BPL persons. IGNOAPS (₹200–300/month for 60+ years), IGNWPS (₹300/month for widows), IGNDPS (₹300/month for disabled). States add additional top-up.</span><span class="hi">BPL budhon/vidhvaon/divyang ko ₹200–₹500 monthly pension. IGNOAPS (60+ ke liye ₹200–300/mahine), IGNWPS (vidhvaon ke liye ₹300/mahine), IGNDPS (divyang ke liye ₹300/mahine). Rajya sarkar aur raqam joD sakti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">BPL households as per state government criteria</span><span class="hi">State government ke criteria ke anusar BPL parivaar</span></li>
+              <li><span class="en">Old Age: 60 years+; Widow: 40–79 years; Disabled: 18–79 years with 80%+ disability</span><span class="hi">Budhapa: 60+; Vidhva: 40–79 saal; Divyang: 18–79 saal 80%+ disability ke saath</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at Gram Panchayat (rural) or Ward Office/Urban Local Body (urban). Each state has its own application process — check nsap.nic.in for state-specific details.</span><span class="hi">Gram Panchayat (gramin) ya Ward Office/Urban Local Body (shahari) mein apply karein. Har rajya ki apni application process hai — state-specific details ke liye nsap.nic.in check karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://nsap.nic.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-111-555</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 50. Deen Dayal Upadhyaya Grameen Kaushalya Yojana -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏗️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">DDU-GKY – Grameen Kaushalya Yojana</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Rural Employment · Skill</span><span class="hi">ग्रामीण रोजगार · कौशल</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free skill training for rural youth with 100% job placement guarantee. Training covers accommodation, food, transport costs. Post-placement support and career progression assistance for 2 years.</span><span class="hi">Gramin yuvaon ke liye free skill training aur 100% job placement guarantee. Training mein rahne, khane, aane-jaane ka kharcha sarkar deti hai. 2 saal post-placement support bhi milti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Rural youth aged 15–35 years (up to 45 for SC/ST/women/differently-abled)</span><span class="hi">Gramin yuva 15–35 saal (SC/ST/mahila/divyang ke liye 45 tak)</span></li>
+              <li><span class="en">From poor households — MGNREGS job card holders, BPL families prioritized</span><span class="hi">Garib ghar se — MGNREGS job card holders, BPL parivaaron ko priority</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Contact Block/District office of Rural Development or nearest DDU-GKY training partner. Apply at ddugky.gov.in or through state Rural Livelihoods Mission office.</span><span class="hi">Rural Development ka Block/District office ya nazdeeki DDU-GKY training partner se sampark karein. ddugky.gov.in par ya state Rural Livelihoods Mission office ke zariye apply karein.</span></div>
+        </div>
+        <a class="official-btn" href="https://ddugky.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">DDU-GKY Helpline:</span><span class="hi">DDU-GKY हेल्पलाइन:</span> <b>1800-180-6127</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 51. PM SVANidhi – Street Vendor Loan -->
+  <div class="scheme-card" data-cat="employment">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🛒</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM SVANidhi – Street Vendor Micro-Credit</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Employment · Loan</span><span class="hi">रोजगार · लोन</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Working capital loan of ₹10,000 (1st loan), ₹20,000 (2nd loan), ₹50,000 (3rd loan) for street vendors. 7% interest subsidy via DBT. No collateral required. Digital transactions rewarded with cashback.</span><span class="hi">Street vendors ke liye ₹10,000 (pehla loan), ₹20,000 (doosra loan), ₹50,000 (teesra loan) working capital. DBT se 7% interest subsidy. Koi guarantee nahi chahiye. Digital transactions par cashback bhi milta hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Street vendors who were vending before March 24, 2020</span><span class="hi">Street vendors jo 24 March 2020 se pehle vending kar rahe the</span></li>
+              <li><span class="en">Must have LoR (Letter of Recommendation) or vending certificate from ULB</span><span class="hi">ULB se Letter of Recommendation (LoR) ya vending certificate hona chahiye</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at pmsvanidhi.mohua.gov.in or nearest bank/MFI/NBFC. Town Vending Committee can issue LoR. Apply via CSC or ULB office.</span><span class="hi">pmsvanidhi.mohua.gov.in par ya nazdeeki bank/MFI/NBFC mein apply karein. Town Vending Committee LoR de sakti hai. CSC ya ULB office ke zariye bhi apply ho sakta hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmsvanidhi.mohua.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-11-1979</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 52. Pradhan Mantri Suraksha Bima Yojana -->
+  <div class="scheme-card" data-cat="savings health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🛡️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Suraksha Bima Yojana (PMSBY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Accident Insurance</span><span class="hi">दुर्घटना बीमा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Accidental death and disability insurance for just ₹20/year premium. ₹2 lakh for accidental death or total disability; ₹1 lakh for partial disability. Auto-renewed annually from bank account.</span><span class="hi">Sirf ₹20/saal premium mein accident death aur disability bima. Accidental death ya total disability par ₹2 lakh; partial disability par ₹1 lakh. Har saal bank account se auto-renew hota hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens aged 18–70 years with a savings bank account</span><span class="hi">18–70 saal ke Indian nagarik jinka savings bank account ho</span></li>
+              <li><span class="en">Aadhaar linked to bank account preferred</span><span class="hi">Bank account se Aadhaar link hona better hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Enroll through your bank branch, net banking, mobile banking, or CSC. Fill PMSBY consent form and auto-debit mandate. ₹20 deducted annually from your account.</span><span class="hi">Bank branch, net banking, mobile banking ya CSC se enroll karein. PMSBY consent form aur auto-debit mandate bharein. Har saal ₹20 account se kat jaata hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.jansuraksha.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Jan Suraksha Helpline:</span><span class="hi">Jan Suraksha हेल्पलाइन:</span> <b>1800-110-001</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 53. Pradhan Mantri Jeevan Jyoti Bima Yojana -->
+  <div class="scheme-card" data-cat="savings health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💗</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Life Insurance</span><span class="hi">जीवन बीमा</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Life insurance coverage of ₹2 lakh for just ₹436/year premium (renewable annually). Covers death due to any reason. Nominee receives ₹2 lakh on policyholder's death.</span><span class="hi">Sirf ₹436/saal premium mein ₹2 lakh life insurance (har saal renew hota hai). Kisi bhi kaaran mrityu par nominee ko ₹2 lakh milte hain.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Indian citizens aged 18–50 years with savings bank account</span><span class="hi">18–50 saal ke Indian nagarik jinka savings bank account ho</span></li>
+              <li><span class="en">Coverage continues till age 55</span><span class="hi">Coverage 55 saal tak milti hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Enroll through bank branch, net banking, mobile banking, or CSC. Fill PMJJBY consent-cum-declaration form. ₹436 auto-debited from your savings account each year.</span><span class="hi">Bank branch, net banking, mobile banking ya CSC ke zariye enroll karein. PMJJBY consent-cum-declaration form bharein. Har saal ₹436 savings account se auto-debit hota hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.jansuraksha.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-110-001</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 54. PM WANI – Public WiFi -->
+  <div class="scheme-card" data-cat="employment education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">📶</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">PM-WANI – Public Wi-Fi Access Network</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Digital · Rural</span><span class="hi">डिजिटल · ग्रामीण</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Affordable public Wi-Fi hotspots across India especially in rural and semi-urban areas. Citizens can access internet through PM-WANI hotspots at low cost. Small shop owners can earn extra income by becoming Public Data Office (PDO) operators.</span><span class="hi">India bhar mein saste public Wi-Fi hotspots — khaaskar gramin aur semi-urban ilaaqon mein. Nagrik kam daam mein internet use kar sakte hain. Chote dukandaar PDO operator banke extra kamai kar sakte hain.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Any citizen can use PM-WANI hotspots for internet access</span><span class="hi">Koi bhi nagarik PM-WANI hotspot se internet use kar sakta hai</span></li>
+              <li><span class="en">Any small shop owner can register as PDO to set up hotspot (no license/fee required)</span><span class="hi">Koi bhi chota dukandaar PDO ke roop mein register hokar hotspot laga sakta hai (koi license/fee nahi)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">To become a PDO operator, register on dot.gov.in/pm-wani portal. No registration fee. Get Wi-Fi equipment and start earning. Users access via PM-WANI app.</span><span class="hi">PDO operator banne ke liye dot.gov.in/pm-wani portal par register karein. Koi fee nahi. Wi-Fi equipment lagayen aur kamai shuru karein. Users PM-WANI app se access karte hain.</span></div>
+        </div>
+        <a class="official-btn" href="https://dot.gov.in/pm-wani" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">DOT Helpline:</span><span class="hi">DOT हेल्पलाइन:</span> <b>1800-110-420</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 55. National Scholarship Portal -->
+  <div class="scheme-card" data-cat="education">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">📚</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">National Scholarship Portal (NSP) – Central Scholarships</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Education · Scholarship</span><span class="hi">शिक्षा · छात्रवृत्ति</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">One-stop platform for 50+ central government scholarships — covering pre-matric, post-matric, merit-cum-means, top class education, and more. Amount varies: ₹1,000–₹75,000/year depending on scheme and level.</span><span class="hi">50+ central government scholarships ka ek hi jagah platform — pre-matric, post-matric, merit-cum-means, top class education aur aur bhi. Raqam ₹1,000–₹75,000/saal tak scheme aur level ke anusar alag-alag.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">SC/ST/OBC/Minority/Disabled students at various levels (Class 1 to PhD)</span><span class="hi">Alag-alag levels par SC/ST/OBC/Minority/Divyang vidyarthi (Class 1 se PhD tak)</span></li>
+              <li><span class="en">Income criteria varies by scholarship — usually family income below ₹2.5 lakh per year</span><span class="hi">Income criteria scholarship ke hisaab se alag hoti hai — aam taur par family income ₹2.5 lakh saalana se kam</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Register and apply at scholarships.gov.in every year during the application window (Aug–Nov typically). Renew each year. Documents required: Aadhaar, income certificate, marksheets, bank passbook.</span><span class="hi">Har saal scholarships.gov.in par register karke apply karein (aam taur par Aug–Nov). Har saal renewal zaroori. Documents: Aadhaar, aay praman patra, marksheet, bank passbook.</span></div>
+        </div>
+        <a class="official-btn" href="https://scholarships.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">NSP Helpline:</span><span class="hi">NSP हेल्पलाइन:</span> <b>0120-6619540</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 56. Kisan Credit Card -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">💳</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Kisan Credit Card (KCC)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer · Credit</span><span class="hi">किसान · क्रेडिट</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Flexible revolving credit for farmers at subsidized interest rate of just 4% p.a. (with govt. interest subvention). Cover crop cultivation, post-harvest expenses, allied activities, and personal needs. Credit limit based on land holding and crop pattern.</span><span class="hi">Kisaanon ke liye sirf 4% saalana (govt. subvention ke baad) par flexible revolving credit. Fasal ugaane, post-harvest kharche, allied activities aur zarooratein sabhi cover. Credit limit zameen aur fasal ke hisaab se tay hoti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">All farmers (individual/joint borrowers, owner-cultivators, tenant farmers, sharecroppers)</span><span class="hi">Sabhi kisaan (individual/joint, zameen maalik, kiraye ke kisaan, bataaidaar)</span></li>
+              <li><span class="en">Also available for fishermen and animal husbandry farmers</span><span class="hi">Machhimare aur pashupalak kisaanon ke liye bhi available</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at nearest bank branch (public/private/cooperative) or online at pmkisan.gov.in KCC application link. Aadhaar, land documents and photo required.</span><span class="hi">Nazdeeki bank branch (sarkari/private/cooperative) mein ya pmkisan.gov.in KCC application link se online apply karein. Aadhaar, zameen ke kagzaat aur photo chahiye.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmkisan.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Kisan Call Centre:</span><span class="hi">किसान कॉल सेंटर:</span> <b>1800-180-1551</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 57. Pradhan Mantri Jan Dhan Yojana -->
+  <div class="scheme-card" data-cat="savings">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🏦</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Jan Dhan Yojana (PMJDY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Banking · Financial Inclusion</span><span class="hi">बैंकिंग · वित्तीय समावेश</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Zero-balance savings account with RuPay debit card. ₹2 lakh accident insurance cover with RuPay card. ₹10,000 overdraft facility after 6 months. Access to Direct Benefit Transfer (DBT) for all government schemes. No minimum balance required.</span><span class="hi">Zero-balance savings account aur RuPay debit card. RuPay card ke saath ₹2 lakh accident insurance. 6 mahine baad ₹10,000 overdraft. Sabhi government schemes ka DBT seedha account mein. Minimum balance ki zaroorat nahi.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Any Indian citizen above 10 years of age who doesn't have a bank account</span><span class="hi">10+ saal ka koi bhi Indian nagarik jiska bank account na ho</span></li>
+              <li><span class="en">Only Aadhaar or any one valid ID proof needed</span><span class="hi">Sirf Aadhaar ya koi ek valid ID proof kaafi hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit any bank branch or Bank Mitra/Business Correspondent in your area. Fill PMJDY account opening form with Aadhaar/ID proof and photo. Account opens same day in most cases.</span><span class="hi">Kisi bhi bank branch ya nazdeeki Bank Mitra/Business Correspondent ke paas jaayein. Aadhaar/ID proof aur photo ke saath PMJDY account opening form bharein. Zyaadatar usi din account khul jaata hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://pmjdy.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Helpline:</span><span class="hi">हेल्पलाइन:</span> <b>1800-11-0001 / 1800-180-1111</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 58. Pradhan Mantri Ujjwala Yojana 2.0 -->
+  <div class="scheme-card" data-cat="women health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🔥</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Pradhan Mantri Ujjwala Yojana 2.0 (PMUY)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Women · LPG · Health</span><span class="hi">महिला · LPG · स्वास्थ्य</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Free LPG connection (cylinder + regulator + burner/stove) to BPL women. First refill and stove provided free. Deposit fee waived. Minimum documentation — address proof not mandatory for migrants.</span><span class="hi">BPL mahilaon ko free LPG connection (cylinder + regulator + chulha). Pehla refill aur chulha free. Deposit waived. Migrant mahilaon ko address proof nahi chahiye.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Adult women from BPL households who don't already have LPG connection</span><span class="hi">BPL ghar ki woh balig mahilayein jinka pehle se LPG connection na ho</span></li>
+              <li><span class="en">Covers SC/ST households, AAY, PM Awas Yojana beneficiaries, forest dwellers, river islanders, tea garden workers</span><span class="hi">SC/ST, AAY, PM Awas Yojana laabhaarthi, vanvaasi, nadi dweep nivaasi, tea garden workers bhi shamil</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply online at pmuy.gov.in or visit nearest LPG distributor (HP/Indane/Bharat Gas). Fill KYC form with Aadhaar. Self-declaration accepted in place of address proof for migrants.</span><span class="hi">pmuy.gov.in par online apply karein ya nazdeeki LPG distributor (HP/Indane/Bharat Gas) par jaayein. Aadhaar ke saath KYC form bharein. Migrants ke liye self-declaration kaafi hai.</span></div>
+        </div>
+        <a class="official-btn" href="https://www.pmuy.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">LPG Helpline:</span><span class="hi">LPG हेल्पलाइन:</span> <b>1906</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 59. Digital India Land Records Modernization Programme -->
+  <div class="scheme-card" data-cat="farmer">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🗺️</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">DILRMP – Digital Land Records (Bhulekh / Bhu-Naksha)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Farmer · Digital</span><span class="hi">किसान · डिजिटल</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">View and download your land records (Khasra/Khatauni/RoR), land maps (Bhu-Naksha) online for free anytime. Reduces fraud, avoids multiple trips to government offices, helps in getting loans and settling disputes.</span><span class="hi">Apne zameen ke kagzaat (Khasra/Khatauni/RoR) aur naksha (Bhu-Naksha) online kabhi bhi free mein dekhen aur download karein. Dhokhebazi kam hoti hai, sarkari daftar ke chakkar nahi lagate, loan aur vivad suljaane mein madad milti hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Any landowner or citizen can access records online</span><span class="hi">Koi bhi zameen maalik ya nagarik online records dekh sakta hai</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Visit your state's official Bhulekh/land records portal (e.g. upbhulekh.gov.in for UP, bhunaksha.gov.in for maps). Enter Khasra number/Khata number. Download or print records. No registration needed.</span><span class="hi">Apne rajya ka official Bhulekh portal kholen (jaise UP ke liye upbhulekh.gov.in, naksha ke liye bhunaksha.gov.in). Khasra/Khata number daalen. Records download ya print karein. Koi registration nahi chahiye.</span></div>
+        </div>
+        <a class="official-btn" href="https://dilrmp.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">DoLR Helpline:</span><span class="hi">DoLR हेल्पलाइन:</span> <b>1800-11-8111</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 60. Swachh Bharat Mission - Urban -->
+  <div class="scheme-card" data-cat="housing health">
+    <div class="scheme-header" onclick="toggleCard(this)">
+      <div class="scheme-emoji">🚽</div>
+      <div class="scheme-title-wrap">
+        <div class="scheme-title">Swachh Bharat Mission – Urban 2.0 (SBM-U)</div>
+        <div class="tag-row">
+          <span class="scheme-tag"><span class="en">Housing · Sanitation</span><span class="hi">आवास · स्वच्छता</span></span>
+          <span class="verified-tag">✓ <span class="en">Source Verified</span><span class="hi">स्रोत सत्यापित</span></span>
+        </div>
+      </div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="scheme-body">
+      <div class="scheme-body-inner">
+        <div class="info-row">
+          <div class="info-label"><span class="en">Benefit</span><span class="hi">लाभ</span></div>
+          <div class="info-value"><span class="en">Financial assistance for construction of individual household toilets (IHHL) in urban areas — ₹10,000 to ₹17,000 depending on city. Focus on slum areas, SC/ST/BPL families. Solid waste management and water body rejuvenation also covered.</span><span class="hi">Shahari ilaakon mein ghar mein shauchalay banane ke liye ₹10,000 se ₹17,000 sahayata (sheher ke anusar). Slum ilaakon, SC/ST/BPL parivaaron par focus. Solid waste management aur talab safai bhi iss mission mein shamil hai.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">Eligibility</span><span class="hi">पात्रता</span></div>
+          <div class="info-value">
+            <ul>
+              <li><span class="en">Urban households without toilet or with only dry latrines</span><span class="hi">Shahari ghar jisme shauchalay nahi ya sirf dry latrine hai</span></li>
+              <li><span class="en">Priority to SC/ST, BPL, physically disabled-headed households</span><span class="hi">SC/ST, BPL, divyang parivaaron ko priority</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="en">How to Apply</span><span class="hi">कैसे करें</span></div>
+          <div class="info-value"><span class="en">Apply at your local Urban Local Body (Municipal Corporation/Nagar Palika) office or online at swachhbharaturban.gov.in. Ward Sanitary Inspector can also guide you.</span><span class="hi">Apne Urban Local Body (Municipal Corporation/Nagar Palika) office mein ya swachhbharaturban.gov.in par online apply karein. Ward Sanitary Inspector bhi madad kar sakte hain.</span></div>
+        </div>
+        <a class="official-btn" href="https://swachhbharaturban.gov.in" target="_blank" rel="noopener">
+          <span class="en">Go to Official Website</span><span class="hi">Official Website pe jaayein</span> <span class="arrow">→</span>
+        </a>
+        <div class="helpline-row"><span class="en">Swachh Bharat Helpline:</span><span class="hi">स्वच्छ भारत हेल्पलाइन:</span> <b>1969</b></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="no-results" id="noResults">
+  😕 <span class="en">No scheme found. Try a different keyword.</span><span class="hi">Koi yojana nahi mili. Doosra keyword try karein.</span>
+</div>
+
+<!-- Ad slot placeholder - AdMob banner yahan integrate karein -->
+<div class="ad-slot">
+  <div class="ad-slot-inner">AD BANNER SPACE — AdMob banner yahan add karein</div>
+</div>
+
+<footer>
+  <span class="en">All information is sourced from publicly available government sources and may change from time to time. Always check <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener">myscheme.gov.in</a> for the latest details.</span>
+  <span class="hi">Saari jaankari publicly available govt sources se li gayi hai aur samay-samay par badal sakti hai. Hamesha latest details ke liye <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener">myscheme.gov.in</a> check karein.</span>
+  <div class="gov-seal-row">
+    <div class="line"></div>
+    <span>Information Service · Not affiliated with Govt. of India</span>
+    <div class="line"></div>
+  </div>
+</footer>
+
+<script>
+  // ---- Card Toggle ----
+  function toggleCard(headerEl){
+    const card = headerEl.closest('.scheme-card');
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.scheme-card.open').forEach(c => {
+      if(c !== card) c.classList.remove('open');
+    });
+    card.classList.toggle('open', !wasOpen);
+  }
+
+  // ---- Language Toggle (global so onclick= can call it) ----
+  function setLang(lang){
+    document.body.className = 'lang-' + lang;
+    var btnEn = document.getElementById('btnEn');
+    var btnHi = document.getElementById('btnHi');
+    if(btnEn) btnEn.classList.toggle('active', lang === 'en');
+    if(btnHi) btnHi.classList.toggle('active', lang === 'hi');
+    var sb = document.getElementById('searchBox');
+    if(sb){
+      sb.placeholder = lang === 'hi'
+        ? (sb.dataset.placeholderHi || sb.dataset.placeholderhi || '')
+        : (sb.dataset.placeholderEn || sb.dataset.placeholderen || '');
+    }
+    try{ localStorage.setItem('yojana_lang', lang); } catch(e){}
+  }
+
+  // ---- Run after DOM is ready ----
+  document.addEventListener('DOMContentLoaded', function(){
+    var searchBox   = document.getElementById('searchBox');
+    var noResults   = document.getElementById('noResults');
+    var resultCount = document.getElementById('resultCount');
+    var cards       = Array.from(document.querySelectorAll('.scheme-card'));
+    var activeFilter = 'all';
+
+    function applyFilters(){
+      var query = searchBox ? searchBox.value.trim().toLowerCase() : '';
+      var visibleCount = 0;
+
+      cards.forEach(function(card){
+        var titleEl = card.querySelector('.scheme-title');
+        var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        var cats = card.dataset.cat || '';
+        var matchesSearch = !query || title.includes(query);
+        var matchesFilter = activeFilter === 'all' || cats.split(' ').includes(activeFilter);
+
+        if(matchesSearch && matchesFilter){
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+          card.classList.remove('open');
+        }
+      });
+
+      if(noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      if(resultCount) resultCount.innerHTML = '<b>' + visibleCount + '</b> <span class="en">scheme(s) found</span><span class="hi">yojana mili</span>';
+    }
+
+    if(searchBox) searchBox.addEventListener('input', applyFilters);
+
+    document.querySelectorAll('.chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        activeFilter = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    applyFilters();
+
+    // Restore saved language preference
+    try{
+      var savedLang = localStorage.getItem('yojana_lang');
+      if(savedLang === 'hi') setLang('hi');
+    } catch(e){}
+  });
+</script>
+
+</body>
+</html>
